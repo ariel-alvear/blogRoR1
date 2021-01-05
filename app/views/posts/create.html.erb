@@ -1,0 +1,17 @@
+<% if @article.errors.any? %>
+    <div id="error_explanation">
+        <h2>
+            <%= pluralize(@article.errors.count, "error") %>
+                prohibited this user from being saved:
+        </h2>
+        <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+    <%= link_to 'Try again', posts_dashboard_path %>
+<% else %>
+<h1> Has creado el artículo con éxito </h1>
+<%= link_to 'Crear nuevo artículo', posts_dashboard_path %>
+<% end %>

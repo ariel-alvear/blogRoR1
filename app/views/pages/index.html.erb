@@ -1,0 +1,17 @@
+<h1>Blog Principal</h1>
+<table class="table">
+    <tr>
+        <th>Título</th>
+        <th>Imagen</th>
+        <th>Contenido</th>
+        <th>Fecha de creación</th>
+    </tr>
+    <% @article.each do |article| %>
+    <tr>
+        <td><%= article.title %> </td>
+        <td><img src="<%= article.urlimage %>" width="250px" height="250px"> </td>
+        <td><%= article.body %> </td>
+        <td><%= article.created_at %></td>
+    </tr>
+    <% end %>
+</table>
