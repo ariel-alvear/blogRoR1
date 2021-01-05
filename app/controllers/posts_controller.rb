@@ -3,6 +3,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @article = Article.create(title: params[:title], urlimage: params[:urlimage], body: params[:body])
+    @post = Post.create(title: params[:title], image_url: params[:image_url], content: params[:content])
   end
 end
