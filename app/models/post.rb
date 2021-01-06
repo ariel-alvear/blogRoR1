@@ -3,7 +3,7 @@ class Post < ApplicationRecord
 
     before_save :erase_word
 
-    def replace_word
-        self.content = self.content.uppercase.gsub "SPOILER", ""
+    def erase_word
+        self.content = self.content.gsub("spoiler", "")
     end
 end
