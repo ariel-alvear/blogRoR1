@@ -4,6 +4,6 @@ class Post < ApplicationRecord
     before_save :erase_word
 
     def erase_word
-        self.content = self.content.gsub("spoiler", "")
+        self.content = self.content.gsub("spoiler", "").gsub("Spoiler", "").gsub("SPOILER", "")
     end
 end
