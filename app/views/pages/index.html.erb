@@ -1,17 +1,12 @@
 <h1>Blog Principal</h1>
-<table class="table">
-    <tr>
-        <th>Título</th>
-        <th>Imagen</th>
-        <th>Contenido</th>
-        <th>Fecha de creación</th>
-    </tr>
-    <% @post.each do |post| %>
-    <tr>
-        <td><%= post.title %> </td>
-        <td><img src="<%= post.image_url %>" width="250px" height="250px"> </td>
-        <td><%= post.content %> </td>
-        <td><%= post.created_at %></td>
-    </tr>
-    <% end %>
-</table>
+
+<% @post.each do |post| %>
+<div class="card mb-2" style="width: 75%;">
+    <h3 class="card-title text-center"><%= post.title %></h3>
+    <img class="card-img-top" src="<%= post.image_url %>" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text"><%= post.content %></p>
+        <h6 class="card-subtitle mb-2 text-muted"><td><%= post.created_at %></td></h6>
+    </div>
+</div>
+<% end %>
